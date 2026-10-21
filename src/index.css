@@ -1,0 +1,16 @@
+/* Impor Tailwind CSS v4 — semua utilitas tersedia setelah baris ini */
+@import "tailwindcss";
+
+/* Pengaturan dasar: font minimal 16px agar mudah dibaca pasien lansia */
+:root {
+  font-size: 16px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8fafc;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+}

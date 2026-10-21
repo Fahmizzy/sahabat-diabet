@@ -1,0 +1,32 @@
+# Dependensi
+node_modules/
+
+# File environment — JANGAN commit ke Git (berisi kunci rahasia)
+.env
+.env.local
+.env.*.local
+
+# Output build
+dist/
+dist-ssr/
+
+# Cache Vite dan editor
+.vite/
+*.local
+.DS_Store
+Thumbs.db
+
+# Log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
