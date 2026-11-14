@@ -1,12 +1,11 @@
 // src/pages/LoginPage.jsx
 // Halaman masuk untuk pasien dan perawat (/login)
 import { useState } from 'react'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { useAuth, getHomePath } from '../hooks/useAuth'
 
 function LoginPage() {
   const { user, profile, loading, signIn } = useAuth()
-  const navigate = useNavigate()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -31,9 +30,8 @@ function LoginPage() {
 
     try {
       await signIn({ email, password })
-      // Setelah login berhasil, state di AuthProvider akan memperbarui session & profile
-      // Pengalihan otomatis terjadi melalui pemeriksaan di atas atau navigasi
-      navigate('/', { replace: true })
+      // Setelah login berhasil, session & profile dimuat oleh AuthProvider,
+      // lalu redirect otomatis ke beranda masing-masing (/ atau /perawat)
     } catch (err) {
       // Menggunakan pesan generik ramah untuk seluruh kegagalan kredensial
       setErrorMessage(err.message || 'Email atau kata sandi salah. Silakan periksa kembali.')

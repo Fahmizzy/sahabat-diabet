@@ -21,10 +21,10 @@ Tandai `[x]` setelah selesai dan sudah saya uji. Commit ke Git setiap tugas sele
 - Uji: skenario RLS di akhir `03-DATABASE.md`. ✅
 
 ## Tugas 3 — Login dan peran
-- [ ] Halaman login dan registrasi (dengan consent)
-- [ ] Hook `useAuth`, proteksi rute per peran
-- [ ] Redirect: pasien ke `/`, perawat ke `/perawat`
-- Uji: pasien tidak bisa membuka `/perawat`.
+- [x] Halaman login dan registrasi (dengan consent)
+- [x] Hook `useAuth`, proteksi rute per peran
+- [x] Redirect: pasien ke `/`, perawat ke `/perawat`
+- Uji: pasien tidak bisa membuka `/perawat`. ✅
 
 ## Tugas 4 — Pencatatan gula darah (F1)
 - [ ] Form input + validasi (angka masuk akal, wajib pilih jenis pemeriksaan)
@@ -67,3 +67,5 @@ Tandai `[x]` setelah selesai dan sudah saya uji. Commit ke Git setiap tugas sele
 - Keterbatasan: schedule_logs ditulis pasien sendiri (laporan mandiri), tidak diverifikasi perawat.
 - Akun uji: pasien.a, pasien.b (pasien), pasien.c (dijadikan perawat uji, ditugaskan hanya ke pasien A). Data uji harus dihapus sebelum penggunaan sungguhan.
 - Sumber tabel nilai normal yang dipakai: PERKENI 2021 (Pedoman Pemantauan Glukosa Darah Mandiri, Tabel 1 untuk target kendali; Kriteria Diagnosis DM untuk edukasi diagnosa).
+- Tugas 3: tombol Keluar di semua halaman (HomePage, PerawatDashboardPage, UnsupportedRolePage, ProtectedRoute) diperbaiki saat uji manual agar navigasi ke /login berjalan setelah signOut. LoginPage: navigate setelah login dihapus; redirect ditangani oleh kondisi profil di masing-masing komponen.
+- Tugas 3: tombol Keluar di semua halaman (HomePage, PerawatDashboardPage, UnsupportedRolePage, ProtectedRoute) diperbaiki saat uji manual agar navigasi ke /login berjalan setelah signOut. LoginPage: navigate('/') setelah login dihapus karena redirect ditangani oleh useAuth melalui kondisi profil di komponen.

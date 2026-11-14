@@ -1,6 +1,6 @@
 // src/components/ProtectedRoute.jsx
 // Komponen pelindung rute berdasarkan status autentikasi dan peran (role) pengguna
-import { Navigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { useAuth, getHomePath } from '../hooks/useAuth'
 
 /**
@@ -14,6 +14,7 @@ import { useAuth, getHomePath } from '../hooks/useAuth'
  * @param {React.ReactNode} props.children - Komponen anak yang akan dirender jika lolos
  */
 function ProtectedRoute({ allowedRoles, children }) {
+  const navigate = useNavigate()
   const {
     user,
     profile,
@@ -23,6 +24,11 @@ function ProtectedRoute({ allowedRoles, children }) {
     refetchProfile,
     signOut,
   } = useAuth()
+
+  const handleSignOut = async () => {
+    await signOut()
+    navigate('/login', { replace: true })
+  }
 
   // 1. TAHAP PEMUATAN:
   // Selama sesi DAN profil masih dimuat (loading === true),
@@ -69,7 +75,7 @@ function ProtectedRoute({ allowedRoles, children }) {
               Coba Lagi
             </button>
             <button
-              onClick={signOut}
+              onClick={handleSignOut}
               type="button"
               className="w-full min-h-[44px] px-4 py-3 bg-slate-200 hover:bg-slate-300 text-slate-800 font-medium text-base rounded-xl transition duration-150"
             >

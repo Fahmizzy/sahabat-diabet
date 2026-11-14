@@ -1,12 +1,19 @@
 // src/pages/PerawatDashboardPage.jsx
 // Halaman Dashboard Perawat (rute '/perawat')
+import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
 
 function PerawatDashboardPage() {
   const { profile, signOut } = useAuth()
+  const navigate = useNavigate()
 
   // Nama perawat dari profil
   const nurseName = profile?.full_name?.trim() || 'Perawat'
+
+  const handleSignOut = async () => {
+    await signOut()
+    navigate('/login', { replace: true })
+  }
 
   return (
     <main className="min-h-screen bg-slate-50 p-4 sm:p-6 flex flex-col items-center">
@@ -25,7 +32,7 @@ function PerawatDashboardPage() {
             </p>
           </div>
           <button
-            onClick={signOut}
+            onClick={handleSignOut}
             type="button"
             className="min-h-[44px] px-4 py-2 border border-slate-300 hover:bg-slate-100 text-slate-700 font-medium text-base rounded-xl transition duration-150"
           >
