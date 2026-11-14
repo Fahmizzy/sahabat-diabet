@@ -8,17 +8,17 @@ Tandai `[x]` setelah selesai dan sudah saya uji. Commit ke Git setiap tugas sele
 - [ ] Buat repo GitHub dan proyek Supabase
 
 ## Tugas 1 — Setup proyek
-- [ ] Inisialisasi React + Vite + Tailwind + react-router-dom
-- [ ] `src/lib/supabaseClient.js` memakai env variable
-- [ ] `.gitignore` memuat `.env`; buat `.env.example`
-- [ ] Struktur folder sesuai `02-ARCHITECTURE.md`
-- Uji: `npm run dev` berjalan, halaman kosong tampil.
+- [x] Inisialisasi React + Vite + Tailwind + react-router-dom
+- [x] `src/lib/supabaseClient.js` memakai env variable
+- [x] `.gitignore` memuat `.env`; buat `.env.example`
+- [x] Struktur folder sesuai `02-ARCHITECTURE.md`
+- Uji: `npm run dev` berjalan, halaman kosong tampil. ✅
 
 ## Tugas 2 — Database dan RLS
-- [ ] Tulis SQL tabel sesuai `03-DATABASE.md` (tampilkan dulu untuk persetujuan)
-- [ ] Aktifkan RLS dan policy semua tabel
-- [ ] Seed data dummy: 2 pasien, 1 perawat, nilai rujukan, 3 artikel
-- Uji: skenario RLS di akhir `03-DATABASE.md`.
+- [x] Tulis SQL tabel sesuai `03-DATABASE.md` (tampilkan dulu untuk persetujuan)
+- [x] Aktifkan RLS dan policy semua tabel
+- [x] Seed data dummy: 2 pasien, 1 perawat, nilai rujukan, 3 artikel
+- Uji: skenario RLS di akhir `03-DATABASE.md`. ✅
 
 ## Tugas 3 — Login dan peran
 - [ ] Halaman login dan registrasi (dengan consent)
@@ -62,4 +62,8 @@ Tandai `[x]` setelah selesai dan sudah saya uji. Commit ke Git setiap tugas sele
 - [ ] Ekspor riwayat gula darah ke PDF/CSV
 
 ## Catatan keputusan
-(Tulis di sini keputusan penting selama pengerjaan, mis. sumber tabel nilai normal yang dipakai.)
+- Uji RLS lolos: (a), (b), (d), kontak darurat. BELUM diuji, wajib sebelum Tugas 8 (deploy): (c) pendaftaran dengan metadata role='nurse' tetap menjadi 'patient', (e) tanpa login, (f) kategori palsu dihitung ulang, (g) update category palsu, (h) pasien tidak bisa mengubah jadwal obat.
+- Security Advisor: 2 peringatan tersisa (current_user_role dan is_assigned_nurse dapat dieksekusi pengguna login) bersifat disengaja karena dipakai policy RLS.
+- Keterbatasan: schedule_logs ditulis pasien sendiri (laporan mandiri), tidak diverifikasi perawat.
+- Akun uji: pasien.a, pasien.b (pasien), pasien.c (dijadikan perawat uji, ditugaskan hanya ke pasien A). Data uji harus dihapus sebelum penggunaan sungguhan.
+- Sumber tabel nilai normal yang dipakai: PERKENI 2021 (Pedoman Pemantauan Glukosa Darah Mandiri, Tabel 1 untuk target kendali; Kriteria Diagnosis DM untuk edukasi diagnosa).
