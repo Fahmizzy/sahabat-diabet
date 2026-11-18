@@ -34,9 +34,9 @@ Tandai `[x]` setelah selesai dan sudah saya uji. Commit ke Git setiap tugas sele
 - Uji: input 55, 95, 180, 260 → kategori sesuai tabel. ✅
 
 ## Tugas 5 — Edukasi (F3)
-- [ ] Daftar artikel + kategori + pencarian
-- [ ] Detail artikel (render markdown) + embed video YouTube
-- Uji: artikel tampil di HP.
+- [x] Daftar artikel + kategori + pencarian
+- [x] Detail artikel (render markdown) + embed video YouTube
+- Uji: artikel tampil di HP. ✅
 
 ## Tugas 6 — Dashboard perawat dan kontak darurat (F4)
 - [ ] Daftar pasien yang ditugaskan
@@ -70,3 +70,4 @@ Tandai `[x]` setelah selesai dan sudah saya uji. Commit ke Git setiap tugas sele
 - Tugas 3: tombol Keluar di semua halaman (HomePage, PerawatDashboardPage, UnsupportedRolePage, ProtectedRoute) diperbaiki saat uji manual agar navigasi ke /login berjalan setelah signOut. LoginPage: navigate setelah login dihapus; redirect ditangani oleh kondisi profil di masing-masing komponen.
 - Tugas 3: tombol Keluar di semua halaman (HomePage, PerawatDashboardPage, UnsupportedRolePage, ProtectedRoute) diperbaiki saat uji manual agar navigasi ke /login berjalan setelah signOut. LoginPage: navigate('/') setelah login dihapus karena redirect ditangani oleh useAuth melalui kondisi profil di komponen.
 - Tugas 4: Kategori gula darah dihitung trigger database, frontend tidak mengirim category. Baris rujukan batas rendah (<70) masih PLACEHOLDER: verifikasi ke pedoman. Pesan untuk kategori rendah belum berisi saran penanganan: TODO konsultasi pembimbing. Data uji (log gula darah) harus dihapus sebelum penggunaan sungguhan.
+- Tugas 5: Konten artikel edukasi masih contoh dan WAJIB diganti materi terverifikasi (perawat/pembimbing) lengkap dengan sumber sebelum diuji ke pengguna sungguhan. Gambar markdown dinonaktifkan sengaja (cegah pelacakan). Pengelolaan artikel oleh perawat belum dibuat.
