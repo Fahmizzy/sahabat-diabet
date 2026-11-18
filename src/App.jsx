@@ -11,6 +11,8 @@ import PerawatDashboardPage from './pages/PerawatDashboardPage.jsx'
 import UnsupportedRolePage from './pages/UnsupportedRolePage.jsx'
 import GlucosePage from './pages/GlucosePage.jsx'
 import NilaiNormalPage from './pages/NilaiNormalPage.jsx'
+import EducationPage from './pages/EducationPage.jsx'
+import ArticleDetailPage from './pages/ArticleDetailPage.jsx'
 
 function App() {
   return (
@@ -44,6 +46,22 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['patient']}>
                   <NilaiNormalPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/edukasi"
+              element={
+                <ProtectedRoute allowedRoles={['patient']}>
+                  <EducationPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/edukasi/:id"
+              element={
+                <ProtectedRoute allowedRoles={['patient']}>
+                  <ArticleDetailPage />
                 </ProtectedRoute>
               }
             />
