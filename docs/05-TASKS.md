@@ -27,11 +27,11 @@ Tandai `[x]` setelah selesai dan sudah saya uji. Commit ke Git setiap tugas sele
 - Uji: pasien tidak bisa membuka `/perawat`. ✅
 
 ## Tugas 4 — Pencatatan gula darah (F1)
-- [ ] Form input + validasi (angka masuk akal, wajib pilih jenis pemeriksaan)
-- [ ] Fungsi klasifikasi kategori dari tabel `glucose_reference_ranges`
-- [ ] Riwayat + grafik tren (Recharts)
-- [ ] Halaman Tabel Nilai Normal
-- Uji: input 55, 95, 180, 260 → kategori sesuai tabel.
+- [x] Form input + validasi (angka masuk akal, wajib pilih jenis pemeriksaan)
+- [x] Fungsi klasifikasi kategori dari tabel `glucose_reference_ranges`
+- [x] Riwayat + grafik tren (Recharts)
+- [x] Halaman Tabel Nilai Normal
+- Uji: input 55, 95, 180, 260 → kategori sesuai tabel. ✅
 
 ## Tugas 5 — Edukasi (F3)
 - [ ] Daftar artikel + kategori + pencarian
@@ -69,3 +69,4 @@ Tandai `[x]` setelah selesai dan sudah saya uji. Commit ke Git setiap tugas sele
 - Sumber tabel nilai normal yang dipakai: PERKENI 2021 (Pedoman Pemantauan Glukosa Darah Mandiri, Tabel 1 untuk target kendali; Kriteria Diagnosis DM untuk edukasi diagnosa).
 - Tugas 3: tombol Keluar di semua halaman (HomePage, PerawatDashboardPage, UnsupportedRolePage, ProtectedRoute) diperbaiki saat uji manual agar navigasi ke /login berjalan setelah signOut. LoginPage: navigate setelah login dihapus; redirect ditangani oleh kondisi profil di masing-masing komponen.
 - Tugas 3: tombol Keluar di semua halaman (HomePage, PerawatDashboardPage, UnsupportedRolePage, ProtectedRoute) diperbaiki saat uji manual agar navigasi ke /login berjalan setelah signOut. LoginPage: navigate('/') setelah login dihapus karena redirect ditangani oleh useAuth melalui kondisi profil di komponen.
+- Tugas 4: Kategori gula darah dihitung trigger database, frontend tidak mengirim category. Baris rujukan batas rendah (<70) masih PLACEHOLDER: verifikasi ke pedoman. Pesan untuk kategori rendah belum berisi saran penanganan: TODO konsultasi pembimbing. Data uji (log gula darah) harus dihapus sebelum penggunaan sungguhan.
